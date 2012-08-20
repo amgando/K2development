@@ -1,0 +1,26 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>K2Project1</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{f519b49a-b133-4299-ad0b-38280588919f}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>K2Project1</RootNamespace>
+    <AssemblyName>K2Project1</AssemblyName>
+    <Language>C#</Language>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+    <OutputPath>bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <Import Condition="" Project="$(MSBuildExtensionsPath)\SourceCode\v1.0\ProjectSystem.targets" />
+  <ItemGroup>
+    <Content Include="Process.kprx" />
+  </ItemGroup>
+</Project>
