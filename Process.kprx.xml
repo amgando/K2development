@@ -103,10 +103,566 @@
       <CopyLocal>0</CopyLocal>
       <AssemblyName>SourceCode.ResolverFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d</AssemblyName>
     </AssemblyReference>
+    <AssemblyReference>
+      <Guid>493d95970ee8415caf1b2b437be36a24</Guid>
+      <ItemName>Reference</ItemName>
+      <ItemInclude>System.Workflow.ComponentModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, ProcessorArchitecture=MSIL</ItemInclude>
+      <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    </AssemblyReference>
+    <AssemblyReference>
+      <Guid>ae8e1e36b54a47eaa2fb40766a9b7040</Guid>
+      <ItemName>Reference</ItemName>
+      <ItemInclude>System.Workflow.Runtime, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, ProcessorArchitecture=MSIL</ItemInclude>
+      <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    </AssemblyReference>
+    <AssemblyReference>
+      <Guid>5931a942daaa4ed98935e33f9c7aa193</Guid>
+      <ItemName>Reference</ItemName>
+      <ItemInclude>System.Workflow.Activities, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, ProcessorArchitecture=MSIL</ItemInclude>
+      <AssemblyName>System.Workflow.Activities</AssemblyName>
+    </AssemblyReference>
+    <AssemblyReference>
+      <Guid>e86a8a0d086747a0ac75f62b1b4c6374</Guid>
+      <ItemName>Reference</ItemName>
+      <ItemInclude>SourceCode.SmartObjects.Client, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d</ItemInclude>
+      <AssemblyName>SourceCode.SmartObjects.Client, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d</AssemblyName>
+    </AssemblyReference>
+    <AssemblyReference>
+      <Guid>9bdfe649311546e6b5a000d4d03df33e</Guid>
+      <ItemName>Reference</ItemName>
+      <ItemInclude>SourceCode.HostClientAPI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d</ItemInclude>
+      <AssemblyName>SourceCode.HostClientAPI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d</AssemblyName>
+    </AssemblyReference>
   </References>
   <ExecutionLayers>
     <ExecutionLayer>
-      <ExecutableItems/>
+      <ExecutableItems>
+        <MailEventItem Type="SourceCode.Workflow.Design.Mail.MailEventItem" Assembly="SourceCode.Workflow.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+          <Extender Type="SourceCode.Workflow.Design.WindowsWorkflowExtender" Assembly="SourceCode.Workflow.Authoring, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+            <CodeFiles>
+              <CodeFile>
+                <Guid>0e526b262bc44c00b7240fed1c535bb4</Guid>
+                <OriginalFileName>@safeitemname@.xoml</OriginalFileName>
+                <Primary>1</Primary>
+                <Content><![CDATA[<ns0:WorkflowContext xmlns:ns0="clr-namespace:SourceCode.Workflow.Common.Extenders;Assembly=SourceCode.Workflow.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d" x:Class="ExtenderProject_356ce97d8118461788790a9277472edc.EventItem_047f6ab6d76040648ac74668e5a5ad9b" x:Name="EventItem_047f6ab6d76040648ac74668e5a5ad9b" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<ns0:WorkflowContext.LockedActivities>
+		<x:Array Type="{x:Type System.String}">
+			<ns1:String xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">SetProperties</ns1:String>
+			<ns1:String xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">Attachment</ns1:String>
+			<ns1:String xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">AttachmentPresent</ns1:String>
+			<ns1:String xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">AddAttachment</ns1:String>
+			<ns1:String xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">NaAttachment</ns1:String>
+			<ns1:String xmlns:ns1="clr-namespace:System;Assembly=mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">SendMail</ns1:String>
+		</x:Array>
+	</ns0:WorkflowContext.LockedActivities>
+	<CodeActivity x:Name="SetProperties" ExecuteCode="SetProperties_ExecuteCode" />
+	<IfElseActivity x:Name="Attachment">
+		<IfElseBranchActivity x:Name="AttachmentPresent">
+			<IfElseBranchActivity.Condition>
+				<CodeCondition Condition="HasAttachment" />
+			</IfElseBranchActivity.Condition>
+			<CodeActivity x:Name="AddAttachment" ExecuteCode="AddAttachment_ExecuteCode" />
+		</IfElseBranchActivity>
+		<IfElseBranchActivity x:Name="NaAttachment" />
+	</IfElseActivity>
+	<CodeActivity x:Name="SendMail" ExecuteCode="SendMail_ExecuteCode" />
+</ns0:WorkflowContext>]]></Content>
+              </CodeFile>
+              <CodeFile>
+                <Guid>bae39156cd0e434e966dcaadbab1e733</Guid>
+                <OriginalFileName>@safeitemname@.xoml.cs</OriginalFileName>
+                <Content><![CDATA[using System;
+using System.Net.Mail;
+using System.Configuration;
+using System.Workflow.Activities;
+using System.ComponentModel;
+using SourceCode.Workflow.Common.Extenders;
+using System.Xml;
+using System.Text;
+ 
+using HOSTCONTEXT = Project_356ce97d8118461788790a9277472edc.EventItemContext_047f6ab6d76040648ac74668e5a5ad9b;
+
+namespace ExtenderProject_356ce97d8118461788790a9277472edc
+{
+    public partial class EventItem_047f6ab6d76040648ac74668e5a5ad9b : IWorkflowContext<HOSTCONTEXT>
+    {
+
+        #region Members
+
+        private HOSTCONTEXT _k2;
+
+        #endregion
+
+        #region Properties
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+
+        private MailMessage _emailmessage = null;
+        private MailMessage EmailMessage
+        {
+            set
+            {
+                _emailmessage = value;
+            }
+            get
+            {
+                if (_emailmessage == null)
+                {
+                    _emailmessage = new MailMessage();
+                }
+                return _emailmessage;
+            }
+        }
+        #endregion
+
+        #region Code Activities
+
+        private void HasAttachment(object sender, ConditionalEventArgs e)
+        {
+            e.Result = bool.Parse(K2.Configuration.HasAttachment);
+        }
+
+        private void SetProperties_ExecuteCode(object sender, EventArgs e)
+        {
+            this.EmailMessage.From = new MailAddress(K2.Configuration.From);
+
+            if (bool.Parse(K2.Configuration.ToSpecify))
+            {
+                if (!string.IsNullOrEmpty(K2.Configuration.To))
+                {
+                    string[] arrto = K2.Configuration.To.Split(';');
+                    foreach (string to in arrto)
+                    {
+                        if (string.IsNullOrEmpty(to))
+                        {
+                            throw new ArgumentException("The email address, Null or Empty, does not meet the requirements.");
+                        }
+
+                        try
+                        {
+                            this.EmailMessage.To.Add(new MailAddress(to));
+                        }
+                        catch
+                        {
+                            throw new FormatException("The email address : " + to + ", is invalid.");
+                        }
+                    }
+                }
+            }
+
+            if (!string.IsNullOrEmpty(K2.Configuration.Cc))
+            {
+                string[] arrcc = K2.Configuration.Cc.Split(';');
+                foreach (string cc in arrcc)
+                {
+                    if (string.IsNullOrEmpty(cc))
+                    {
+                        throw new ArgumentException("The email address, Null or Empty, does not meet the requirements.");
+                    }
+
+                    try
+                    {
+                        this.EmailMessage.CC.Add(new MailAddress(cc));
+                    }
+                    catch
+                    {
+                        throw new FormatException("The email address : " + cc + ", is invalid.");
+                    }
+                }
+            }
+
+            if (!string.IsNullOrEmpty(K2.Configuration.Bcc))
+            {
+                string[] arrbcc = K2.Configuration.Bcc.Split(';');
+                foreach (string bcc in arrbcc)
+                {
+                    if (string.IsNullOrEmpty(bcc))
+                    {
+                        throw new ArgumentException("The email address, Null or Empty, does not meet the requirements.");
+                    }
+
+                    try
+                    {
+                        this.EmailMessage.Bcc.Add(new MailAddress(bcc));
+                    }
+                    catch
+                    {
+                        throw new FormatException("The email address : " + bcc + ", is invalid.");
+                    }
+                }
+            }
+
+            // CHECK FLAG TO INCLUDE DESTINATION USER(S)
+            if (bool.Parse(K2.Configuration.ToDestinationUser))
+            {
+                // IF SINGLEINSTANCE
+                if (K2.ActivityInstanceDestination.ActivityInstance.SingleInstance)
+                {
+                    foreach (SourceCode.KO.User user in K2.ActivityInstanceDestination.ActivityInstance.Destinations)
+                    {
+                        this.EmailMessage.To.Add(user.Email);
+                    }
+                }
+                else
+                {
+                    // IF NOT SINGLEINSTANCE USE USER EMAIL
+                    if (K2.ActivityInstanceDestination.User == null)
+                    {
+                        throw new Exception("Activity instance destination not available.");
+                    }
+                    this.EmailMessage.To.Add(K2.ActivityInstanceDestination.User.Email.ToString());
+                }
+            }
+
+            if (bool.Parse(K2.Configuration.ToOriginator))
+            {
+                this.EmailMessage.To.Add(K2.ProcessInstance.Originator.Email.ToString());
+            }
+
+            this.EmailMessage.Subject = K2.Configuration.Subject;
+
+            this.EmailMessage.Body = K2.Configuration.Body;
+
+            this.EmailMessage.IsBodyHtml = bool.Parse(K2.Configuration.HTMLEmail);
+
+            switch (K2.Configuration.Importance)
+            {
+                case "0":
+                    this.EmailMessage.Priority = MailPriority.Normal;
+                    break;
+                case "1":
+                    this.EmailMessage.Priority = MailPriority.Low;
+                    break;
+                case "2":
+                    this.EmailMessage.Priority = MailPriority.High;
+                    break;
+            }
+        }
+
+        private void AddAttachment_ExecuteCode(object sender, EventArgs e)
+        {
+
+            XmlDocument MyXml = new XmlDocument();
+
+            MyXml.LoadXml(K2.Configuration.Attachments);
+
+            foreach (XmlElement attachmentitem in MyXml.DocumentElement.SelectSingleNode("//mailevent/attachments").ChildNodes)
+            {
+                string location = string.Empty;
+                string filename = string.Empty;
+                string content = string.Empty;
+                string fieldname = string.Empty;
+                string xmlfieldxpath = string.Empty;
+
+                string xmlfilenamexpath = string.Empty;
+                string xmlfilenamefield = string.Empty;
+                string xmlfilenamefieldscope = string.Empty;
+                string xmlfilecontentxpath = string.Empty;
+                string xmlfilecontentfield = string.Empty;
+                string xmlfilecontentfieldscope = string.Empty;
+
+                bool isencodingtext = false;
+                bool isxmlfield = false;
+                bool isipattachments = false;
+                bool isstringfield = false;
+                bool issofield = false;
+                bool isfileondisk = false;
+                bool issolistfield = true;
+
+                if (attachmentitem.SelectSingleNode("location").FirstChild != null)
+                {
+                    location = attachmentitem.SelectSingleNode("location").FirstChild.InnerText;
+                }
+                if (attachmentitem.SelectSingleNode("filename").FirstChild != null)
+                {
+                    filename = attachmentitem.SelectSingleNode("filename").FirstChild.InnerText;
+                }
+                if (attachmentitem.SelectSingleNode("content").FirstChild != null)
+                {
+                    content = attachmentitem.SelectSingleNode("content").FirstChild.InnerText;
+                }
+                if (attachmentitem.SelectSingleNode("fieldname").FirstChild != null)
+                {
+                    fieldname = attachmentitem.SelectSingleNode("fieldname").FirstChild.InnerText;
+                }
+                if (attachmentitem.SelectSingleNode("isfileondisk").FirstChild != null)
+                {
+                    isfileondisk = bool.Parse(attachmentitem.SelectSingleNode("isfileondisk").FirstChild.InnerText);
+                }
+                if (attachmentitem.SelectSingleNode("isencodingtext").FirstChild != null)
+                {
+                    isencodingtext = bool.Parse(attachmentitem.SelectSingleNode("isencodingtext").FirstChild.InnerText);
+                }
+                if (attachmentitem.SelectSingleNode("isxmlfield").FirstChild != null)
+                {
+                    isxmlfield = bool.Parse(attachmentitem.SelectSingleNode("isxmlfield").FirstChild.InnerText);
+                }
+                if (attachmentitem.SelectSingleNode("isipattachments").FirstChild != null)
+                {
+                    isipattachments = bool.Parse(attachmentitem.SelectSingleNode("isipattachments").FirstChild.InnerText);
+                }
+                if (attachmentitem.SelectSingleNode("isstringfield").FirstChild != null)
+                {
+                    isstringfield = bool.Parse(attachmentitem.SelectSingleNode("isstringfield").FirstChild.InnerText);
+                }
+                if (attachmentitem.SelectSingleNode("issofield").FirstChild != null)
+                {
+                    issofield = bool.Parse(attachmentitem.SelectSingleNode("issofield").FirstChild.InnerText);
+                }
+                if (attachmentitem.SelectSingleNode("issolistfield").FirstChild != null)
+                {
+                    issolistfield = bool.Parse(attachmentitem.SelectSingleNode("issolistfield").FirstChild.InnerText);
+                }
+                if (attachmentitem.SelectSingleNode("xmlfieldxpath").FirstChild != null)
+                {
+                    xmlfieldxpath = attachmentitem.SelectSingleNode("xmlfieldxpath").FirstChild.InnerText;
+                }
+                if (attachmentitem.SelectSingleNode("xmlfilenamexpath").FirstChild != null)
+                {
+                    xmlfilenamexpath = attachmentitem.SelectSingleNode("xmlfilenamexpath").FirstChild.InnerText;
+                }
+                if (attachmentitem.SelectSingleNode("xmlfilenamefield").FirstChild != null)
+                {
+                    xmlfilenamefield = attachmentitem.SelectSingleNode("xmlfilenamefield").FirstChild.InnerText;
+                }
+                if (attachmentitem.SelectSingleNode("xmlfilenamefieldscope").FirstChild != null)
+                {
+                    xmlfilenamefieldscope = attachmentitem.SelectSingleNode("xmlfilenamefieldscope").FirstChild.InnerText;
+                }
+                if (attachmentitem.SelectSingleNode("xmlfilecontentxpath").FirstChild != null)
+                {
+                    xmlfilecontentxpath = attachmentitem.SelectSingleNode("xmlfilecontentxpath").FirstChild.InnerText;
+                }
+                if (attachmentitem.SelectSingleNode("xmlfilecontentfield").FirstChild != null)
+                {
+                    xmlfilecontentfield = attachmentitem.SelectSingleNode("xmlfilecontentfield").FirstChild.InnerText;
+                }
+                if (attachmentitem.SelectSingleNode("xmlfilecontentfieldscope").FirstChild != null)
+                {
+                    xmlfilecontentfieldscope = attachmentitem.SelectSingleNode("xmlfilecontentfieldscope").FirstChild.InnerText;
+                }
+
+                if (isfileondisk)
+                {
+                    this.EmailMessage.Attachments.Add(new Attachment(System.IO.Path.Combine(location, filename)));
+                }
+                else if (isxmlfield)
+                {
+                    //IP attachments : <?mso-infoPath-file-attachment-present?>
+                    if (isipattachments)
+                    {
+                        SourceCode.Workflow.Common.SharePoint.Document.InfoPath.Attachments ipAttachments = new
+                        SourceCode.Workflow.Common.SharePoint.Document.InfoPath.Attachments(content, xmlfieldxpath);
+
+                        byte[] xmlfileData = ipAttachments[0].File;
+
+                        string xmlfileName = ipAttachments[0].FileName;
+
+                        if (string.IsNullOrEmpty(xmlfileName))
+                        {
+                            xmlfileName = filename;
+                        }
+
+                        System.IO.MemoryStream ms = new System.IO.MemoryStream(xmlfileData);
+
+                        this.EmailMessage.Attachments.Add(new Attachment(ms, xmlfileName));
+                    }
+                    //Base64
+                    else if (xmlfieldxpath.Length > 1)
+                    {
+                        //Xml Repeating Node
+                        if ((xmlfilenamexpath.Length > 1) && (xmlfilecontentxpath.Length > 1))
+                        {
+                            XmlDocument xmlFileNameCollection = new XmlDocument();
+
+                            XmlDocument xmlFileContentCollection = new XmlDocument();
+
+                            if (xmlfilenamefieldscope.ToUpper() == "PROCESS")
+                            {
+                                xmlFileNameCollection.LoadXml(K2.ProcessInstance.XmlFields[xmlfilenamefield].Value);
+                            }
+                            else if (xmlfilenamefieldscope.ToUpper() == "ACTIVITY")
+                            {
+                                xmlFileNameCollection.LoadXml(K2.ActivityInstanceDestination.XmlFields[xmlfilenamefield].Value);
+                            }
+
+                            if (xmlfilecontentfieldscope.ToUpper() == "PROCESS")
+                            {
+                                xmlFileContentCollection.LoadXml(K2.ProcessInstance.XmlFields[xmlfilecontentfield].Value);
+                            }
+                            else if (xmlfilenamefieldscope.ToUpper() == "ACTIVITY")
+                            {
+                                xmlFileContentCollection.LoadXml(K2.ActivityInstanceDestination.XmlFields[xmlfilecontentfield].Value);
+                            }
+
+                            XmlNodeList xmlFileNameList = xmlFileNameCollection.SelectNodes(xmlfilenamexpath);
+
+                            XmlNodeList xmlFileContentList = xmlFileContentCollection.SelectNodes(xmlfilecontentxpath);
+
+                            for (Int32 I = 0; I < xmlFileContentList.Count; I++)
+                            {
+                                System.IO.MemoryStream ms = new System.IO.MemoryStream(System.Convert.FromBase64String(xmlFileContentList[I].InnerText));
+
+                                this.EmailMessage.Attachments.Add(new Attachment(ms, xmlFileNameList[I].InnerText));
+                            }
+                        }
+                        //Xml Node Content
+                        else
+                        {
+                            System.IO.MemoryStream ms = new System.IO.MemoryStream(System.Convert.FromBase64String(content));
+
+                            this.EmailMessage.Attachments.Add(new Attachment(ms, filename));
+                        }
+                    }
+                    // Text
+                    else
+                    {
+                        byte[] buffer = Encoding.UTF8.GetBytes(content);
+
+                        System.IO.MemoryStream ms = new System.IO.MemoryStream(buffer);
+
+                        this.EmailMessage.Attachments.Add(new Attachment(ms, filename));
+                    }
+                }
+                else
+                {
+                    if (isstringfield)
+                    {
+                        //Base64
+                        if ((!isencodingtext) || (issofield) || (issolistfield))
+                        {
+                            System.IO.MemoryStream ms = new System.IO.MemoryStream(System.Convert.FromBase64String(content));
+
+                            this.EmailMessage.Attachments.Add(new Attachment(ms, filename));
+                        }
+                        // Text
+                        else
+                        {
+                            byte[] buffer = Encoding.UTF8.GetBytes(content);
+
+                            System.IO.MemoryStream ms = new System.IO.MemoryStream(buffer);
+
+                            this.EmailMessage.Attachments.Add(new Attachment(ms, filename));
+                        }
+                    }
+                    // Binary 2 Base64
+                    else
+                    {
+                        System.IO.MemoryStream ms = new System.IO.MemoryStream(System.Convert.FromBase64String(content));
+
+                        this.EmailMessage.Attachments.Add(new Attachment(ms, filename));
+                    }
+                }
+
+            }
+        }
+
+        private void SendMail_ExecuteCode(object sender, EventArgs e)
+        {
+            SmtpClient client = new SmtpClient();
+
+            if (K2.Configuration.SMTPServer.IndexOf(":") == -1)
+            {
+                client.Host = K2.Configuration.SMTPServer;
+            }
+            else
+            {
+                string[] connection = K2.Configuration.SMTPServer.Split(new Char[] {':' });
+
+                Int32 I = 0;
+
+                if (string.IsNullOrEmpty(connection[0]) || string.IsNullOrEmpty(connection[1]))
+                {
+                    throw new Exception("Invalid SMTP Server / Port arguments supplied.");
+                }
+
+                // PORT 2ND PARM ONLY!
+                if (Int32.TryParse(connection[1], out I))
+                {
+                    client.Host = connection[0];
+                    client.Port = Int32.Parse(connection[1]);
+                }
+                else
+                {
+                    throw new Exception("Invalid SMTP Server / Port arguments supplied.");
+                }
+            }
+
+            client.Send(this.EmailMessage);
+            client = null;
+
+            if (_emailmessage != null)
+            {
+                _emailmessage.Dispose();
+            }
+            _emailmessage = null;
+        }
+
+        #endregion
+
+        #region IWorkflowContext<HOSTCONTEXT> Members
+
+        public Project_356ce97d8118461788790a9277472edc.EventItemContext_047f6ab6d76040648ac74668e5a5ad9b K2
+        {
+            get
+            {
+                return _k2;
+            }
+            set
+            {
+                _k2 = value;
+            }
+        }
+
+        #endregion
+
+    }
+}
+]]></Content>
+              </CodeFile>
+            </CodeFiles>
+            <Guid>047f6ab6d76040648ac74668e5a5ad9b</Guid>
+            <MetaData/>
+            <Language>CSharp</Language>
+          </Extender>
+          <SMTPServer Type="SourceCode.Workflow.Authoring.K2Field" Assembly="SourceCode.Workflow.Authoring, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+            <Parts>
+              <ArtifactLibraryFieldPart Type="SourceCode.Workflow.Design.ArtifactLibraryFieldPart" Assembly="SourceCode.Workflow.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+                <Guid>d98364fc780e45dcaad388ec16fceead</Guid>
+                <FieldName>Mail Server</FieldName>
+              </ArtifactLibraryFieldPart>
+            </Parts>
+            <Guid>c33eddbfed4e4bf6b75a690d8e9223ec</Guid>
+          </SMTPServer>
+          <From Type="SourceCode.Workflow.Authoring.K2Field" Assembly="SourceCode.Workflow.Authoring, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+            <Parts>
+              <ValueTypePart Type="SourceCode.Workflow.Design.ValueTypePart" Assembly="SourceCode.Workflow.Authoring, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+                <Guid>22ace33bf5dd4aa795536cc1f8d9ae09</Guid>
+                <ValueType>System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+                <Value><![CDATA[abc@123.com]]></Value>
+              </ValueTypePart>
+            </Parts>
+            <Guid>d1ba165a02c84ceba7402d281c08ff00</Guid>
+          </From>
+          <Subject Type="SourceCode.Workflow.Authoring.K2Field" Assembly="SourceCode.Workflow.Authoring, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+            <Parts>
+              <ValueTypePart Type="SourceCode.Workflow.Design.ValueTypePart" Assembly="SourceCode.Workflow.Authoring, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+                <Guid>d5a837a21bde477788cbcc9a8bac379f</Guid>
+                <ValueType>System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+                <Value><![CDATA[hello world]]></Value>
+              </ValueTypePart>
+            </Parts>
+            <Guid>3e2020dcdd6f43bfb6642c101f9cc479</Guid>
+          </Subject>
+          <Guid>69d1decfb6c9434abd8c3d038c8ddbb6</Guid>
+          <MetaData/>
+          <Parent ref="3f8acd5e-e28b-4cdb-a158-457334317351&#13;"/>
+          <ToOriginator>1</ToOriginator>
+          <Importance>0</Importance>
+          <Version>1</Version>
+        </MailEventItem>
+      </ExecutableItems>
       <Guid>5ed9b2e713994e4298da85d789211c0a</Guid>
       <Name>Default</Name>
       <Description>This represents the default execution layer for the process.</Description>
@@ -145,6 +701,36 @@
   </Lines>
   <Activities>
     <Activity Type="SourceCode.Workflow.Design.DefaultActivity" Assembly="SourceCode.Workflow.Authoring, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+      <Events>
+        <Event Type="SourceCode.Workflow.Design.Mail.MailEvent" Assembly="SourceCode.Workflow.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+          <WizardDefinition Type="SourceCode.Workflow.Design.Mail.MailWizardDefinition" Assembly="SourceCode.Workflow.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+            <PropertyWizardDefinitions>
+              <PropertyWizardDefinition Type="SourceCode.Workflow.Design.GeneralProperties.GeneralPropertiesPropertyWizardDefinition" Assembly="SourceCode.Workflow.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+                <Guid>4689ccb6b61c4961870c81bf99636f8f</Guid>
+                <Name>{60482781-7219-4781-a267-fb9378e213b8}</Name>
+                <RegisteredItem>Event General Property Wizard</RegisteredItem>
+              </PropertyWizardDefinition>
+              <PropertyWizardDefinition Type="SourceCode.Workflow.Design.Mail.MailPropertyWizardDefinition" Assembly="SourceCode.Workflow.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+                <Guid>9a81aeb967ea43f9bef5e71cd0bf6a92</Guid>
+                <Name>{48361767-bb2a-429f-be9b-030838ee6886}</Name>
+                <RegisteredItem>Mail Event Item Property Wizard</RegisteredItem>
+              </PropertyWizardDefinition>
+              <PropertyWizardDefinition Type="SourceCode.Workflow.Design.Exceptions.ExceptionPropertyWizardDefinition" Assembly="SourceCode.Workflow.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+                <Guid>cbca61e42e7045f383f4b6bb7fce9dd8</Guid>
+                <Name>{713a39ea-4376-44d5-aa75-e1ec97d18527}</Name>
+                <RegisteredItem>Exception Rule</RegisteredItem>
+              </PropertyWizardDefinition>
+            </PropertyWizardDefinitions>
+            <Guid>153127e792b44a45856e81f646e9be64</Guid>
+            <Name/>
+            <Status>Executed</Status>
+            <RegisteredItem>Mail Event Wizard</RegisteredItem>
+          </WizardDefinition>
+          <Guid>3f8acd5ee28b4cdba158457334317351</Guid>
+          <Name>MailEvent</Name>
+          <EventItemGuid>69d1decf-b6c9-434a-bd8c-3d038c8ddbb6</EventItemGuid>
+        </Event>
+      </Events>
       <WizardDefinition Type="SourceCode.Workflow.Design.DefaultActivityWizardDefinition" Assembly="SourceCode.Workflow.Authoring, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
         <PropertyWizardDefinitions>
           <PropertyWizardDefinition Type="SourceCode.Workflow.Design.GeneralProperties.GeneralPropertiesPropertyWizardDefinition" Assembly="SourceCode.Workflow.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
@@ -221,9 +807,15 @@
           <IsMinimizedLabelVisible>1</IsMinimizedLabelVisible>
         </ProcessViewActivityLayoutData>
         <ProcessViewActivityLayoutData Type="SourceCode.Workflow.Design.ProcessViewActivityLayoutData" Assembly="SourceCode.Workflow.Authoring, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+          <EventsLayoutData>
+            <ProcessViewEventLayoutData Type="SourceCode.Workflow.Design.ProcessViewEventLayoutData" Assembly="SourceCode.Workflow.Authoring, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+              <Guid>946f8f705cfa4933a401dc25087becc1</Guid>
+              <Name>{3f8acd5e-e28b-4cdb-a158-457334317351}</Name>
+            </ProcessViewEventLayoutData>
+          </EventsLayoutData>
           <Guid>975e1fe7588c4e6d860788170439938f</Guid>
           <Width>190</Width>
-          <Height>46</Height>
+          <Height>38</Height>
           <X>208</X>
           <Y>80</Y>
           <Name>{5b2076b5-df76-49dd-bbd6-62c09d31bf21}</Name>
@@ -236,6 +828,7 @@
           <SelectionColorR>0</SelectionColorR>
           <SelectionColorG>0</SelectionColorG>
           <SelectionColorB>0</SelectionColorB>
+          <IsEventStripOpen>1</IsEventStripOpen>
           <IsMinimizedLabelVisible>1</IsMinimizedLabelVisible>
         </ProcessViewActivityLayoutData>
       </ActivitiesLayoutData>
@@ -255,6 +848,8 @@
           <LabelLocked>0</LabelLocked>
           <LabelVisible>1</LabelVisible>
           <LabelDragged>0</LabelDragged>
+          <LabelLocationX>293</LabelLocationX>
+          <LabelLocationY>64</LabelLocationY>
           <LineColorR>26</LineColorR>
           <LineColorG>85</LineColorG>
           <LineColorB>39</LineColorB>
@@ -262,17 +857,15 @@
           <LineSelectionColorG>0</LineSelectionColorG>
           <LineSelectionColorB>0</LineSelectionColorB>
           <LinePinned>0</LinePinned>
-          <LineRenderPointCount>5</LineRenderPointCount>
+          <LineRenderPointCount>4</LineRenderPointCount>
           <LineRenderPointX_0>292</LineRenderPointX_0>
           <LineRenderPointY_0>51</LineRenderPointY_0>
           <LineRenderPointX_1>292</LineRenderPointX_1>
           <LineRenderPointY_1>69</LineRenderPointY_1>
           <LineRenderPointX_2>292</LineRenderPointX_2>
-          <LineRenderPointY_2>74</LineRenderPointY_2>
+          <LineRenderPointY_2>60</LineRenderPointY_2>
           <LineRenderPointX_3>292</LineRenderPointX_3>
-          <LineRenderPointY_3>80</LineRenderPointY_3>
-          <LineRenderPointX_4>292</LineRenderPointX_4>
-          <LineRenderPointY_4>70</LineRenderPointY_4>
+          <LineRenderPointY_3>70</LineRenderPointY_3>
           <Name>{20b66924-e763-47be-a5fe-477091359a23}</Name>
         </ProcessViewLineLayoutData>
       </LinesLayoutData>
@@ -347,6 +940,12 @@
             <DesignerGuid>5b2076b5-df76-49dd-bbd6-62c09d31bf21</DesignerGuid>
             <WorkflowSmartObjectGuid>a811165e-6b28-4ec1-9e6a-c31f4462e8a0</WorkflowSmartObjectGuid>
             <WorkflowReportingSmartObjectGuid>91f5da7f-064d-4b0e-bf98-7c3f94020dbc</WorkflowReportingSmartObjectGuid>
+          </SmartObjectServicesDesignerMapping>
+          <SmartObjectServicesDesignerMapping Type="SourceCode.Workflow.Design.SmartObjectServices.SmartObjectServicesDesignerMapping" Assembly="SourceCode.Workflow.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+            <Guid>123c90b42f3a407db25d6e8395a835ea</Guid>
+            <DesignerGuid>3f8acd5e-e28b-4cdb-a158-457334317351</DesignerGuid>
+            <WorkflowSmartObjectGuid>51c1a03d-744e-4249-92ae-49a3abb39764</WorkflowSmartObjectGuid>
+            <WorkflowReportingSmartObjectGuid>b667a8fd-c33d-4e66-a5ba-b2a40a2c875a</WorkflowReportingSmartObjectGuid>
           </SmartObjectServicesDesignerMapping>
         </SmartObjectServicesDesignerMappings>
         <Guid>38a5d5cde0bf47c298e2206aa1da84fb</Guid>
