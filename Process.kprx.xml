@@ -112,6 +112,37 @@
       <Description>This represents the default execution layer for the process.</Description>
     </ExecutionLayer>
   </ExecutionLayers>
+  <Lines>
+    <Line Type="SourceCode.Workflow.Design.DefaultLine" Assembly="SourceCode.Workflow.Authoring, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+      <WizardDefinition Type="SourceCode.Workflow.Design.DefaultLineWizardDefinition" Assembly="SourceCode.Workflow.Authoring, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+        <PropertyWizardDefinitions>
+          <PropertyWizardDefinition Type="SourceCode.Workflow.Design.GeneralProperties.GeneralPropertiesPropertyWizardDefinition" Assembly="SourceCode.Workflow.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+            <Guid>1c5126c4ff374953a483f4c99577a0a5</Guid>
+            <Name>{177a9dda-5805-4ae5-a880-fde470b84167}</Name>
+            <RegisteredItem>Line General Property Wizard</RegisteredItem>
+          </PropertyWizardDefinition>
+          <PropertyWizardDefinition Type="SourceCode.Workflow.Design.SimpleRules.SimpleLineRulePropertyWizardDefinition" Assembly="SourceCode.Workflow.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+            <Guid>87cbb8eb20c544f0bb525f0aed84958d</Guid>
+            <Name>{301a39e8-ced8-4b6f-8d6c-7b4e627213bf}</Name>
+            <RegisteredItem>E050F697-C765-4b55-A7BA-E9E0F05CBF32</RegisteredItem>
+          </PropertyWizardDefinition>
+          <PropertyWizardDefinition Type="SourceCode.Workflow.Design.Exceptions.ExceptionPropertyWizardDefinition" Assembly="SourceCode.Workflow.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+            <Guid>fa9472ea68894a3b9b2197bc21dcecf0</Guid>
+            <Name>{6f6657c8-a4f1-4302-a924-4d392f49d2da}</Name>
+            <RegisteredItem>Exception Rule</RegisteredItem>
+          </PropertyWizardDefinition>
+        </PropertyWizardDefinitions>
+        <Guid>ee4cbae82dbe4b44acd6e74e814b98b6</Guid>
+        <Name/>
+        <Status>Executed</Status>
+        <RegisteredItem>Default Line Wizard</RegisteredItem>
+      </WizardDefinition>
+      <Guid>20b66924e76347bea5fe477091359a23</Guid>
+      <Name>DefaultLine</Name>
+      <StartActivity>Start</StartActivity>
+      <FinishActivity>DefaultActivity</FinishActivity>
+    </Line>
+  </Lines>
   <Activities>
     <Activity Type="SourceCode.Workflow.Design.DefaultActivity" Assembly="SourceCode.Workflow.Authoring, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
       <WizardDefinition Type="SourceCode.Workflow.Design.DefaultActivityWizardDefinition" Assembly="SourceCode.Workflow.Authoring, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
@@ -208,6 +239,43 @@
           <IsMinimizedLabelVisible>1</IsMinimizedLabelVisible>
         </ProcessViewActivityLayoutData>
       </ActivitiesLayoutData>
+      <LinesLayoutData>
+        <ProcessViewLineLayoutData Type="SourceCode.Workflow.Design.ProcessViewLineLayoutData" Assembly="SourceCode.Workflow.Authoring, Version=4.0.0.0, Culture=neutral, PublicKeyToken=16a2c5aaaa1b130d">
+          <Guid>da3a8285944545f98685982c08299abb</Guid>
+          <StartMaximizedX>92</StartMaximizedX>
+          <StartMaximizedY>40</StartMaximizedY>
+          <StartMinimizedX>92</StartMinimizedX>
+          <StartMinimizedY>40</StartMinimizedY>
+          <EndDirectionMaximized>Down</EndDirectionMaximized>
+          <EndDirectionMinimized>Down</EndDirectionMinimized>
+          <EndMaximizedX>91</EndMaximizedX>
+          <EndMaximizedY>46</EndMaximizedY>
+          <EndMinimizedX>91</EndMinimizedX>
+          <EndMinimizedY>46</EndMinimizedY>
+          <LabelLocked>0</LabelLocked>
+          <LabelVisible>1</LabelVisible>
+          <LabelDragged>0</LabelDragged>
+          <LineColorR>26</LineColorR>
+          <LineColorG>85</LineColorG>
+          <LineColorB>39</LineColorB>
+          <LineSelectionColorR>0</LineSelectionColorR>
+          <LineSelectionColorG>0</LineSelectionColorG>
+          <LineSelectionColorB>0</LineSelectionColorB>
+          <LinePinned>0</LinePinned>
+          <LineRenderPointCount>5</LineRenderPointCount>
+          <LineRenderPointX_0>292</LineRenderPointX_0>
+          <LineRenderPointY_0>51</LineRenderPointY_0>
+          <LineRenderPointX_1>292</LineRenderPointX_1>
+          <LineRenderPointY_1>69</LineRenderPointY_1>
+          <LineRenderPointX_2>292</LineRenderPointX_2>
+          <LineRenderPointY_2>74</LineRenderPointY_2>
+          <LineRenderPointX_3>292</LineRenderPointX_3>
+          <LineRenderPointY_3>80</LineRenderPointY_3>
+          <LineRenderPointX_4>292</LineRenderPointX_4>
+          <LineRenderPointY_4>70</LineRenderPointY_4>
+          <Name>{20b66924-e763-47be-a5fe-477091359a23}</Name>
+        </ProcessViewLineLayoutData>
+      </LinesLayoutData>
       <Guid>4597045cf615466d8cc48eb76ca71023</Guid>
       <Name>ProcessView</Name>
       <GridSizeWidth>16</GridSizeWidth>
